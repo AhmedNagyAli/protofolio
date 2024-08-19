@@ -2,9 +2,9 @@
 
 namespace App\Filament\Granada\Resources;
 
-use App\Filament\Granada\Resources\SettingResource\Pages;
-use App\Filament\Granada\Resources\SettingResource\RelationManagers;
-use App\Models\Setting;
+use App\Filament\Granada\Resources\ContactResource\Pages;
+use App\Filament\Granada\Resources\ContactResource\RelationManagers;
+use App\Models\Contact;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class SettingResource extends Resource
+class ContactResource extends Resource
 {
-    protected static ?string $model = Setting::class;
+    protected static ?string $model = Contact::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,14 +23,6 @@ class SettingResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('setting_name'),
-                // ->readOnly(),
-                Forms\Components\TextInput::make('setting_value'),
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->directory('Settings')
-                    ->disk('public')
-                    ->preserveFilenames(),
                 //
             ]);
     }
@@ -39,10 +31,11 @@ class SettingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('setting_name'),
-                Tables\Columns\TextColumn::make('setting_value'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('subject'),
+                Tables\Columns\TextColumn::make('message'),
                 Tables\Columns\TextColumn::make('image'),
-
                 //
             ])
             ->filters([
@@ -68,9 +61,9 @@ class SettingResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSettings::route('/'),
-            'create' => Pages\CreateSetting::route('/create'),
-            'edit' => Pages\EditSetting::route('/{record}/edit'),
+            'index' => Pages\ListContacts::route('/'),
+            'create' => Pages\CreateContact::route('/create'),
+            'edit' => Pages\EditContact::route('/{record}/edit'),
         ];
     }
 }

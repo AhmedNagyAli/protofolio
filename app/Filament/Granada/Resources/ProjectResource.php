@@ -44,7 +44,7 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('link'),
                 Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image'),
                 //
             ])
             

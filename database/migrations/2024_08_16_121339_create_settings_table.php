@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('setting_name');
-            $table->string('setting_value');
-            $table->string('image');
+            $table->string('setting_value')->nullable();
+            $table->string('image')->nullable();
 
             $table->timestamps();
         });

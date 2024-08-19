@@ -62,7 +62,7 @@
         <div class="container mx-auto px-4">
           <div class="inline-flex w-full mx-auto items-start justify-center text-center mb-20">
             <h1 class="font-heading text-3xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-10xl tracking-tighter pt-4">Our Projects</h1>
-            <span class="block -mb-4 sm:mr-12 lg:mr-8 text-right text-2xl text-coolGray-600">{{$projects->count()}}</span>
+            <span class="block -mb-4 sm:mr-12 lg:mr-8 text-right text-2xl text-coolGray-600">{{$projectsCount}}</span>
           </div>
           <div class="flex flex-wrap -mx-4 -mb-20">
               @foreach ($projects as $project)
@@ -91,8 +91,8 @@
 
           </div>
           <div class="mt-20 text-center">
-            <a x-on:click.prevent="showContent = true" :class="{'hidden': showContent}" class="group inline-flex py-4 px-6 md:px-30 font-medium text-black hover:text-white items-center justify-center border-1.5 border-black rounded-full hover:bg-black transition duration-200" href="#">
-              <span class="mr-2">View all (21)</span>
+            <a href="{{route('projects')}}"class="group inline-flex py-4 px-6 md:px-30 font-medium text-black hover:text-white items-center justify-center border-1.5 border-black rounded-full hover:bg-black transition duration-200" href="#">
+              <span class="mr-2">View all {{$projectsCount}}</span>
               <span class="group-hover:rotate-45 transform transition duration-100">
                 <svg width="10" height="11" viewbox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 1.5L1 9.5" stroke="currentColor" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -157,10 +157,10 @@
                   @csrf
                   <div class="flex flex-wrap -m-2">
                     <div class="w-full sm:flex-1 p-2">
-                      <input class="w-full px-8 py-5 outline-none rounded-lg border border-neutral-100 placeholder-neutral-600 font-medium focus:ring-4 focus:ring-neutral-100 transition duration-200" type="text" placeholder="Your Email">
+                      <input class="w-full px-8 py-5 outline-none rounded-lg border border-neutral-100 placeholder-neutral-600 font-medium focus:ring-4 focus:ring-neutral-100 transition duration-200" name="email" id="email" type="text" placeholder="Your Email">
                     </div>
                     <div class="w-full sm:w-auto p-2">
-                      <button class="flex justify-center items-center text-center h-full w-full p-5 font-semibold tracking-tight text-lg text-white bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-800 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200" type="submit">Join now</button>
+                      <button class="flex justify-center items-center text-center h-full w-full p-5 font-semibold tracking-tight text-lg text-white bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-800 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200" type="submit">Contact</button>
                     </div>
                   </div>
                 </form>

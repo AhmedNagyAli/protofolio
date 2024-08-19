@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 use function App\Helpers\get_setting;
+use function App\Helpers\get_setting_image;
 
 class HomeController extends Controller
 {
@@ -21,7 +22,8 @@ class HomeController extends Controller
         
         $blogs = Blog::query()->latest('created_at')->paginate(6);
         $projects = Project::query()->paginate(4);
-        return view("home",compact("projects","blogs","customers_number","solved_problems_number"));
+        $projectsCount = Project::query()->count();
+        return view("home",compact("projects","blogs","customers_number","solved_problems_number","projectsCount"));
     }
 
     public function contact(Request $request){
@@ -64,8 +66,8 @@ class HomeController extends Controller
 
         }
         $user = User::query()->where('id',2)->first();
-
-        return view("contact",compact("user"));
+        $contact_image = get_setting_image('default_contact_image');
+        return view("contact",compact("user","contact_image"));
 
     }
     public function blogs(){

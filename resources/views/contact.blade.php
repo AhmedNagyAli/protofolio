@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="relative w-full md:w-1/3 p-3">
-          <img class="w-full object-cover rounded-4xl" style="height: 581px;" src="{{url('storage/header/head1.jpeg')}}" alt="">
+          <img class="w-full object-cover rounded-4xl" style="height: 581px;" src="{{url('storage/'. $contact_image)}}" alt="">
         </div>
         <form method="POST" action="{{route('contact')}}" enctype="multipart/form-data">
           @csrf

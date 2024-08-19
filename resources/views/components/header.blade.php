@@ -5,6 +5,36 @@
         $solved_problems_number = get_setting('solved_problems_number');
 
     @endphp
+
+<section class="pt-6 pb-20 bg-gray-50 overflow-hidden" x-data="{ mobileNavOpen: false }">
+  <div class="container mx-auto px-4">
+    <div class="mb-8 p-8 bg-white rounded-3xl">
+      <div class="flex flex-wrap lg:items-center -m-8">
+        <div class="w-full md:w-1/2 p-8">
+          <div class="md:max-w-lg mx-auto">
+            <span class="inline-block mb-3 text-sm text-blue-500 font-bold uppercase tracking-widest">Best caption here</span>
+            <h1 class="font-heading mb-4 text-5xl text-gray-900 font-black tracking-tight">
+              <span>Build better products</span>
+              <span class="text-transparent bg-clip-text bg-gradient-orange">faster</span>
+              <span>than ever.</span>
+            </h1>
+            <p class="mb-6 text-xl font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis volutpat velit.</p>
+            <div class="flex flex-wrap -m-2">
+              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="#">Get Started</a></div>
+              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-gray-900 font-bold bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:ring-gray-200 rounded-full" href="#">Watch Video</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 p-8">
+          <div class="max-w-max mx-auto md:mr-0 bg-white overflow-hidden rounded-3xl">
+            <img class="mx-auto" src="{{url('storage/header/head1.jpeg')}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{-- 
 <section x-data="{ mobileNavOpen: false }" class="overflow-hidden">
     <div :class="{'block': mobileNavOpen, 'hidden': !mobileNavOpen}" class="hidden fixed top-0 left-0 bottom-0 w-5/6 max-w-xs z-50">
       <div x-on:click="mobileNavOpen = !mobileNavOpen" class="fixed inset-0 bg-black opacity-20"></div>
@@ -114,4 +144,4 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
